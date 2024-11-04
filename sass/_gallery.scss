@@ -1,0 +1,45 @@
+.gallery {
+	padding-top: 50px;
+	background-color: $color-lightgrey;
+	padding-bottom: 50px;
+
+	&_page{
+		background-color: transparent;
+	}
+
+&__inner{
+	display: flex;
+	flex-direction: column;
+align-items: center;
+}
+}
+
+#photo {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+	margin-bottom: 30px;
+}
+
+.photo-img {
+	width: 100%;
+	aspect-ratio: 2/2;
+	vertical-align: top;
+	object-fit: cover;
+	cursor: pointer;
+	transition: 0.3s;
+
+	&:hover {
+		scale: 1.02;
+		box-shadow: 0 0 5px 2px rgba($color: #000000, $alpha: 0.5);
+	}
+}
+
+.gallery__link{
+	color: $color-dark;
+
+	&:hover{
+		background-color: $color-dark;
+		color: #fff;
+	}
+}

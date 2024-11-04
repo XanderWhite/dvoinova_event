@@ -1,0 +1,26 @@
+// универсальные инструменты для работы
+@import "var";
+
+// по умолчанию
+@import "svg";
+@import "fonts";
+@import "reset";
+
+.page {
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@import "page_gallery";
+
+@import "common";
+@import "header";
+@import "intro";
+@import "services";
+@import "separator";
+@import "gallery";
+@import "reviews";
+@import "footer";
+
+@import "modal";
