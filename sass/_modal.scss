@@ -1,50 +1,27 @@
 #modal-close {
-    display: flex;
+	display: flex;
 	position: fixed;
-	top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
+	top: 20px;
+	right: 20px;
 	font-size: 35px;
-    width: 30px;
-    height: 30px;
+	width: 30px;
+	height: 30px;
 	cursor: pointer;
-    z-index: 1;
+	z-index: 1;
 	transition: 0.6s;
-align-items: center;
-justify-content: center;
-    padding: 5px;
-    border-radius: 50%;
-    background-color: #fff;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #fff;
 
 	&:hover {
-		transform: translateX(-50%) rotate(180deg);
+		transform: rotate(180deg);
 	}
 }
 
-#modal-image {
-    width: 100%;
-    max-width: 1000px;
-    max-height: 50%;
-    height: auto;
-    object-fit: contain;
-    transition: 0.3s;
-}
-
-#modal-controls {
-    display: flex;
-	justify-content: space-between;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    top: 0;
-}
-
-
-
-#modal-content{
-    width: 100%;
-    height:100%;
-    background-color: red;
+#modal-content {
+	max-width: 100%;
+	max-height: 100%;
+	background-color: transparent;
 }
