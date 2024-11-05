@@ -20,29 +20,3 @@ item.addEventListener('mouseleave', () => {
 });
 
 
-// //into slider
-
-// const images = document.querySelectorAll('.intro__img');
-// const slider = document.querySelector('.intro__images');
-// const prevButton = document.querySelector('#introBtnLeft');
-// const nextButton = document.querySelector('#introBtnRight');
-// let currentIndex = 0;
-
-// function showSlide(index) {
-//     // Сдвиг слайдера влево или вправо
-//     slider.style.transform = `translateX(-${index * 100}%)`;
-// }
-
-// prevButton.addEventListener('click', () => {
-//     currentIndex = (currentIndex + 1) % images.length; // Увеличиваем индекс, переходим на 0 при достижении конца
-//     showSlide(currentIndex);
-// });
-
-// nextButton.addEventListener('click', () => {
-//     currentIndex = (currentIndex - 1 + images.length) % images.length; // Уменьшаем индекс, переход к последнему при достижении начала
-//     showSlide(currentIndex);
-// });
-
-
-
-
