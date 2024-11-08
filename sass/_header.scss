@@ -12,6 +12,9 @@
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 	background-color: $color-white;
 
+    transition: transform 0.5s ease; /* Плавный переход для трансформации */
+
+
 	&__inner {
 		padding-top: 0;
 		padding-bottom: 0;
