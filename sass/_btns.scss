@@ -1,0 +1,75 @@
+.btn-menu {
+   justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 2;
+    display: none;
+    background-color: transparent;
+    flex-shrink: 0;
+
+       &:focus {
+           animation: anim_pulse .5s infinite   both alternate ease-in-out;
+           outline: none;
+    }
+
+    &__line {
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 1px;
+      position: absolute;
+      margin: auto;
+
+      background-color: $color-pink;
+
+      transition: 0.2s linear;
+
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 4px;
+      left: 0;
+      top: 0px;
+
+      background-color: $color-pink;
+      border-radius: 1px;
+
+      transition: transform 0.2s linear;
+    }
+
+    &::after {
+      top: auto;
+      bottom: 0px;
+    }
+
+    &.active {
+      .btn-menu__line {
+        opacity: 0;
+      }
+
+      &::before {
+        transform: translateY(10px) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+  }
+
+
+  /* ============================= */
+  /* media */
+
+  @media (max-width: 990px) {
+    .btn-menu {
+      display: flex;
+    }
+  }

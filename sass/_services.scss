@@ -1,8 +1,4 @@
 .services {
-	padding-top: 70px;
-	padding-bottom: 50px;
-
-
 	&__content {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
@@ -55,4 +51,19 @@
 	font-family: 'HelveticaNeue-Bold',sans-serif;
 	font-weight: 700;
 	font-size: 16px;
+}
+
+/* ============================= */
+/* media */
+
+@media (max-width: 990px) {
+	.services {
+
+
+
+		&__content {
+
+			grid-template-columns: auto;
+			gap: 30px;
+		}}
 }

@@ -14,15 +14,20 @@ justify-content: space-between;
 .separator__title {
     font-size: 36px;
 }
-.separator__btn {
-    background-color: $color-black;
-    border-radius: 5px;
-    padding: 15px 30px;
-    font-size: 16px;
-    text-transform: uppercase;
 
-&:hover{
-    background-color:$color-white ;
-    color:  $color-black;
-}
+
+/* ============================= */
+/* media */
+
+@media (max-width: 990px) {
+    .separator__inner{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .separator__title{
+        width: 100%;
+        text-align: center;
+        flex: 0 1 auto;
+    }
 }

@@ -7,31 +7,56 @@
 	width: 100%;
 	margin: 0 auto;
 
-	padding: 0px 30px;
+	padding: 50px 30px;
 }
 
 .btn-link {
 	border-radius: 5px;
 	font-family: "HelveticaNeue-Bold", sans-serif;
 	font-weight: 700;
-  font-size: 15px;
+	font-size: 15px;
 
-	&_pink {
+	&:focus {
+		animation: anim_pulse_small 0.5s infinite both alternate ease-in-out;
+		outline: none;
+	}
+
+	&_dark{
+		background-color: $color-black;
+				padding: 15px 30px;
+		font-size: 16px;
+		text-transform: uppercase;
+		white-space: nowrap;
+
+	&:hover,
+	&:focus{
+		background-color:$color-white ;
+		color:  $color-black;
+	}
+	}
+
+	&_pink-hover-light,
+	&_pink-hover-dark {
 		background-color: $color-pink;
 		border-radius: 5px;
 		padding: 15px 30px;
 		text-transform: uppercase;
-		color: #fff;
+		color: $color-dark;
+		display: inline-block;
+		text-align: center;
 
-		.btn-pink:hover {
-			color: black;
+			&:hover,
+		&:focus {
+			color: $color-dark;
 			background-color: $color-white;
-			border: 2px solid black;
 		}
+	}
 
-		&:hover {
-			color: black;
-			background-color: $color-white;
+	&_pink-hover-dark {
+		&:hover,
+		&:focus {
+			background-color: $color-dark;
+			color: $color-white;
 		}
 	}
 }
@@ -46,4 +71,23 @@
 	margin-bottom: 30px;
 }
 
+/* ============================= */
+/* Media */
 
+@media (max-width: 1200px) {
+	.container {
+		max-width: 1000px;
+	}
+}
+
+@media (max-width: 990px) {
+	.container {
+		max-width: 700px;
+	}
+}
+
+@media (max-width: 500px) {
+	.btn-link_pink {
+		align-self: center;
+	}
+}

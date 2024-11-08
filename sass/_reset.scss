@@ -18,15 +18,16 @@
 	clip: rect(0 0 0 0);
 }
 
-html {
-	scroll-behavior: smooth;
-  }
+// html {
+// 	scroll-behavior: smooth;
+//   }
 
 body {
 	font-family: 'HelveticaNeue-Regular', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	color: $color-dark;
+	line-height: 1.4;
 }
 
 h1,
@@ -37,7 +38,7 @@ h5,
 h6 {
 	font-family: 'RobotoSlab-Regular',sans-serif;
 	font-weight: 400;
-	font-size: 42;
+	font-size: 42px;
 }
 
 a {

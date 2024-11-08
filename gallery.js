@@ -45,9 +45,9 @@ function addImgToModalSlider(src){
 	const img = document.createElement("img");
 	img.src = src;
 	img.alt = src;
-	img.classList.add("slider__img");
+	img.classList.add("slider-img");
 	const div = document.createElement("div");
-	div.classList.add("slider__item");
+	div.classList.add("slider-item");
 	div.appendChild(img);
 	modalContent.appendChild(div);
 }
@@ -71,3 +71,24 @@ function closeModal() {
 	modal.close();
 	document.body.classList.remove("no-scroll");
 }
+
+const updateDisplay = () => {
+    const pathname = window.location.pathname;
+
+    if (pathname === "/" || pathname.endsWith("index.html")) {
+        const minCount = 6;
+        const display = (window.innerWidth < 992) ? "none" : "block";
+
+        const items = document.querySelectorAll('.photo-img');
+
+        for (let index = minCount; index < items.length; index++) {
+            items[index].style.display = display;
+        }
+    }
+};
+
+// Устанавливаем отображение при загрузке страницы
+document.addEventListener('DOMContentLoaded', updateDisplay);
+
+// Добавляем слушатель события при изменении размера окна
+window.addEventListener('resize', updateDisplay);

@@ -1,12 +1,12 @@
 .intro {
-	padding-top: 50px;
+	padding-top: 87px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	min-height: 622px;
 }
 
 .intro__content {
-	padding: 75px 150px;
+	padding: 75px 100px;
 	background-color: $color-dark;
 	color: $color-white;
 
@@ -16,6 +16,9 @@
 		max-width: 1000px;
 		width: 100%;
 		margin: 0 auto;
+		display: flex;
+	flex-direction: column;
+	align-items: start;
 	}
 }
 
@@ -38,3 +41,25 @@
 	position: relative;
 }
 
+/* ============================= */
+/* media */
+
+@media (max-width:990px) {
+	.intro {
+
+		grid-template-columns: auto;
+		grid-template-rows: 622px auto;
+
+		&__content{
+			padding: 50px;
+		}
+	}
+}
+
+@media (max-width:500px) {
+	.intro {
+		&__content{
+			padding: 50px;
+		}
+	}
+}

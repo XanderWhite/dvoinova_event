@@ -1,0 +1,17 @@
+@keyframes anim_pulse {
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.1;
+    }
+}
+
+@keyframes anim_pulse_small {
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.02;
+    }
+}
