@@ -1,10 +1,10 @@
 @charset "UTF-8";
 .stroke-pink {
-  stroke: #8164c0;
+  stroke: #e04eb3;
 }
 
 .fill-pink {
-  fill: #8164c0;
+  fill: #e04eb3;
 }
 
 .fill-color {
@@ -235,7 +235,7 @@ textarea {
   color: #000;
 }
 .btn-link_pink-hover-light, .btn-link_pink-hover-dark {
-  background-color: #8164c0;
+  background-color: #e04eb3;
   border-radius: 5px;
   padding: 15px 30px;
   text-transform: uppercase;
@@ -308,7 +308,7 @@ textarea {
   border-radius: 1px;
   position: absolute;
   margin: auto;
-  background-color: #8164c0;
+  background-color: #e04eb3;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
@@ -320,7 +320,7 @@ textarea {
   height: 4px;
   left: 0;
   top: 0px;
-  background-color: #8164c0;
+  background-color: #e04eb3;
   border-radius: 1px;
   -webkit-transition: -webkit-transform 0.2s linear;
   transition: -webkit-transform 0.2s linear;
@@ -391,7 +391,7 @@ textarea {
 
 .header__logo {
   padding: 5px 50px;
-  background-color: #8164c0;
+  background-color: #e04eb3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,7 +440,7 @@ textarea {
 }
 .menu__link:hover, .menu__link:focus {
   background-color: #fafafa;
-  color: #8164c0;
+  color: #e04eb3;
   outline: none;
 }
 .menu__link:hover::before, .menu__link:focus::before {
@@ -548,7 +548,7 @@ textarea {
   margin-bottom: 35px;
 }
 .intro__title__span {
-  color: #8164c0;
+  color: #e04eb3;
 }
 
 .intro__text {
@@ -601,7 +601,7 @@ textarea {
   position: absolute;
   left: 0px;
   bottom: 0px;
-  background-color: #8164c0;
+  background-color: #e04eb3;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -648,7 +648,7 @@ textarea {
   }
 }
 .separator {
-  background-color: #8164c0;
+  background-color: #e04eb3;
   color: #fff;
 }
 
@@ -768,7 +768,7 @@ textarea {
 }
 
 .reviews-pic {
-  background-color: #8164c0;
+  background-color: #e04eb3;
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -995,14 +995,14 @@ textarea {
   scale: 0.95;
 }
 .slick-arrow:hover, .slick-arrow:focus {
-  background-color: #8164c0;
+  background-color: #e04eb3;
 }
 
 .slider-modal .slick-arrow {
   background-color: rgba(158, 146, 158, 0.1);
 }
 .slider-modal .slick-arrow:hover, .slider-modal .slick-arrow:focus {
-  background-color: #8164c0;
+  background-color: #e04eb3;
 }
 
 .slick-arrow::before {
