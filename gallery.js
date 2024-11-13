@@ -2,6 +2,7 @@ const gallery = document.getElementById("photo");
 const modal = document.getElementById("modal-gallery");
 const modalContent = document.getElementById("modal-content");
 const closeButton = document.getElementById("modal-close");
+let currentSlide = 0;
 
 fetch("get_images.php")
 	.then((response) => response.json())
@@ -24,6 +25,7 @@ fetch("get_images.php")
 			img.classList.add("photo-img");
 			img.addEventListener("click", () => {
 				document.body.classList.add("no-scroll");
+				currentSlide = index;
 				modal.showModal();
 
 				$(".slider-modal")
@@ -83,8 +85,7 @@ const updateDisplay = () => {
 
 		const items = document.querySelectorAll(".photo-img");
 
-		if (items.length == 9)
-		items[8].style.display = display;
+		if (items.length == 9) items[8].style.display = display;
 	}
 };
 
@@ -92,4 +93,24 @@ const updateDisplay = () => {
 // document.addEventListener('DOMContentLoaded', updateDisplay);
 
 // Добавляем слушатель события при изменении размера окна
-window.addEventListener("resize", updateDisplay);
+window.addEventListener("resize", () => {
+
+		updateDisplay();
+
+		// Хранит индекс текущего слайда
+		if ($(".slider-modal").hasClass("slick-initialized")) {
+			currentSlide = $(".slider-modal").slick("slickCurrentSlide");
+
+			$(".slider-modal").slick("unslick");
+
+			$(".slider-modal")
+				.slick({
+					infinite: true,
+					fade: true,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					adaptiveHeight: true,
+				})
+				.slick("slickGoTo", currentSlide);
+		}
+});
