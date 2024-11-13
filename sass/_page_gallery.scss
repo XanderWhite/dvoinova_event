@@ -1,7 +1,7 @@
 .page_gallery{
-    padding: 100px 0;
-    background-color: $color-dark;
-    color: $color-white;
+    padding: 50px 0;
+    background-color: $color-white;
+        color: $color-dark;
 }
 
 .main_gallery{
@@ -10,6 +10,6 @@
     align-items: center;
 }
 
-.main__title{
-    margin-bottom: 30px;
+.page_gallery .main__title{
+    margin-bottom: -10px;
 }

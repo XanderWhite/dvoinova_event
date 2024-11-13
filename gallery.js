@@ -7,7 +7,7 @@ fetch("get_images.php")
 	.then((response) => response.json())
 	.then((data) => {
 		images = data;
-		let limit = 8;
+		let limit = 9;
 		const pathname = window.location.pathname;
 
 		if (pathname === "/" || pathname === "/index.html")
@@ -26,22 +26,26 @@ fetch("get_images.php")
 				document.body.classList.add("no-scroll");
 				modal.showModal();
 
-				$('.slider-modal').slick({
-					infinite: true,
-					fade: true,
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					adaptiveHeight: true
-				}).slick('slickGoTo', index);
+				$(".slider-modal")
+					.slick({
+						infinite: true,
+						fade: true,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						adaptiveHeight: true,
+					})
+					.slick("slickGoTo", index);
 			});
 			gallery.appendChild(img);
 
 			addImgToModalSlider(src);
 		});
+
+		updateDisplay();
 	})
 	.catch((error) => console.error("Error:", error));
 
-function addImgToModalSlider(src){
+function addImgToModalSlider(src) {
 	const img = document.createElement("img");
 	img.src = src;
 	img.alt = src;
@@ -51,7 +55,6 @@ function addImgToModalSlider(src){
 	div.appendChild(img);
 	modalContent.appendChild(div);
 }
-
 
 // Закрыть модальное окно
 closeButton.addEventListener("click", () => {
@@ -67,28 +70,26 @@ window.addEventListener("keydown", function (event) {
 
 //акрывает модальное окно
 function closeModal() {
-	$('.slider-modal').slick('unslick');
+	$(".slider-modal").slick("unslick");
 	modal.close();
 	document.body.classList.remove("no-scroll");
 }
 
 const updateDisplay = () => {
-    const pathname = window.location.pathname;
+	const pathname = window.location.pathname;
 
-    if (pathname === "/" || pathname.endsWith("index.html")) {
-        const minCount = 6;
-        const display = (window.innerWidth < 992) ? "none" : "block";
+	if (pathname === "/" || pathname.endsWith("index.html")) {
+		const display = window.innerWidth >= 767 ? "none" : "block";
 
-        const items = document.querySelectorAll('.photo-img');
+		const items = document.querySelectorAll(".photo-img");
 
-        for (let index = minCount; index < items.length; index++) {
-            items[index].style.display = display;
-        }
-    }
+		if (items.length == 9)
+		items[8].style.display = display;
+	}
 };
 
-// Устанавливаем отображение при загрузке страницы
-document.addEventListener('DOMContentLoaded', updateDisplay);
+// // Устанавливаем отображение при загрузке страницы
+// document.addEventListener('DOMContentLoaded', updateDisplay);
 
 // Добавляем слушатель события при изменении размера окна
-window.addEventListener('resize', updateDisplay);
+window.addEventListener("resize", updateDisplay);

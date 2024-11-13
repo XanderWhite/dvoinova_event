@@ -1,7 +1,7 @@
 .header {
 	position: fixed;
 
-	height: 87px;
+	height: $header-height;
 	top: 0;
 	left: 0;
 	z-index: 1000;
@@ -12,8 +12,7 @@
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 	background-color: $color-white;
 
-    transition: transform 0.5s ease; /* Плавный переход для трансформации */
-
+	transition: transform 0.5s ease; /* Плавный переход для трансформации */
 
 	&__inner {
 		padding-top: 0;
@@ -120,9 +119,7 @@
 		}
 
 		&.open {
-			//   bottom: auto;
-			//   top: 87px;
-			translate: 0 calc(100% + 87px);
+			translate: 0 calc(100% + $header-height);
 
 			& .menu__link {
 				&:hover,
@@ -146,5 +143,36 @@
 	.header__logo {
 		padding: 5px 20px;
 		font-size: 25px;
+	}
+}
+
+@media (max-height: 500px) {
+	.nav {
+		height: calc(100vh - $header-height);
+	}
+}
+
+@media (max-height: 370px) {
+.header{
+height: $header-height-min;
+}
+
+.nav {
+	height: calc(100vh - $header-height-min);
+
+	&.open {
+		translate: 0 calc(100% + $header-height-min);
+	}
+}
+
+	.menu{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		&__item{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 }

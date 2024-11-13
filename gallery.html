@@ -16,7 +16,7 @@
 
         <main class="main main_gallery">
             <h1 class="main__title">Моя галерея</h1>
-            <a href="./index.html" class=" btn-link btn-link_pink-hover-light">назад</a>
+            <a href="./index.html"  class="elem-close"><svg viewBox="0 0 32 32" class="elem-close__cross"><line class="elem-close__cross__line" x1="7" x2="25" y1="7" y2="25"/><line class="elem-close__cross__line" x1="7" x2="25" y1="25" y2="7"/></svg></a>
 
             <div class='gallery gallery_page'>
                 <div class="container gallery__inner">
@@ -29,12 +29,11 @@
     </div>
 
         <!-- Модальные окна -->
-          <dialog id="modal-gallery" >
-        <div class=" slider-modal " id="modal-content">
+         <dialog id="modal-gallery">
+        <div class="slider-modal " id="modal-content">
         </div>
-        <span id="modal-close">&times;</span>
+        <span id="modal-close" class="elem-close"><svg viewBox="0 0 32 32" class="elem-close__cross"><line class="elem-close__cross__line" x1="7" x2="25" y1="7" y2="25"/><line class="elem-close__cross__line" x1="7" x2="25" y1="25" y2="7"/></svg></span>
     </dialog>
-
 
     <script src="./gallery.js"></script>
 

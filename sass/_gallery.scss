@@ -33,17 +33,23 @@
 	}
 }
 
-
-
 /* ============================= */
 /* media */
 
-@media (max-width: 990px) {
+@media (max-width: 767px) {
 	#photo {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 10px;
-		margin-bottom: 30px;
+	}
+}
+@media (max-width: 420px) {
+	#photo {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3px;
 	}
 
-
+	.gallery__inner {
+		padding-left: 3px;
+		padding-right: 3px;
+	}
 }
