@@ -2,10 +2,20 @@
 	padding-top: $header-height;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	min-height: 622px;
+	// height: 622px;
+
+	&__block {
+		background-color: $color-grey;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 .intro__content {
+	min-height: 622px;
 	padding: 75px 100px;
 	background-color: $color-dark;
 	color: $color-white;
@@ -20,6 +30,11 @@
 	}
 }
 
+.intro-left
+{
+	position: relative;
+}
+
 .intro__title {
 	margin-bottom: 35px;
 
@@ -32,11 +47,6 @@
 	margin-bottom: 50px;
 	font-family: "RobotoSlab-Regular", sans-serif;
 	font-size: 14px;
-}
-
-.intro__block {
-	background-color: $color-grey;
-	position: relative;
 }
 
 /* ============================= */

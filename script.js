@@ -59,47 +59,6 @@ window.addEventListener('scroll', () => {
 
 
 
-
-// let lastScrollTop = 0;
-// const header = document.getElementById('header');
-// const headerHeight = header.offsetHeight; // Высота заголовка
-
-// window.addEventListener('scroll', () => {
-//     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-//     // Скрытие заголовка только тогда, когда он полностью ушел вниз
-//     if (currentScrollTop > headerHeight) {
-//         if (currentScrollTop > lastScrollTop) {
-//             header.style.transform = 'translateY(-100%)'; // Скроль вниз
-//         } else {
-//             header.style.transform = 'translateY(0)'; // Скроль вверх
-//         }
-//     }
-
-//     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных браузеров
-// });
-
-
-// let lastScrollTop = 0;                                           // Последняя позиция прокрутки
-// const header = document.getElementById('header');              // Получаем заголовок
-// const headerHeight = header.offsetHeight;                       // Высота заголовка
-// const threshold = 50;                                           // Пороговое значение для чувствительности
-
-// window.addEventListener('scroll', () => {
-//     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop; // Текущая позиция прокрутки
-
-//     // Скрытие заголовка только тогда, когда он полностью ушел вниз
-//     if (currentScrollTop > headerHeight + threshold) {
-//         if (currentScrollTop > lastScrollTop) {
-//             header.style.transform = 'translateY(-100%)'; // Скроль вниз, скрыть заголовок
-//         } else {
-//             header.style.transform = 'translateY(0)'; // Скроль вверх, показать заголовок
-//         }
-//     }
-
-//     lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных браузеров
-// });
-
 //=========================
 //sosial
 
