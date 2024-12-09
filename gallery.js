@@ -1,7 +1,7 @@
 const gallery = document.getElementById("photo");
-const modal = document.getElementById("modal-gallery");
+const modalGallery = document.getElementById("modal-gallery");
 const modalContent = document.getElementById("modal-content");
-const closeButton = document.getElementById("modal-close");
+const closeButton = document.getElementById("modal-gallery__close-btn");
 let currentSlide = 0;
 
 fetch("get_images.php")
@@ -26,7 +26,7 @@ fetch("get_images.php")
 			img.addEventListener("click", () => {
 				document.body.classList.add("no-scroll");
 				currentSlide = index;
-				modal.showModal();
+				modalGallery.showModal();
 
 				$(".slider-modal")
 					.slick({
@@ -66,14 +66,14 @@ closeButton.addEventListener("click", () => {
 //закрыть модальное окно нажатием esc
 window.addEventListener("keydown", function (event) {
 	if (event.key === "Escape") {
-		if (modal.open) closeModal();
+		if (modalGallery.open) closeModal();
 	}
 });
 
 //акрывает модальное окно
 function closeModal() {
 	$(".slider-modal").slick("unslick");
-	modal.close();
+	modalGallery.close();
 	document.body.classList.remove("no-scroll");
 }
 
