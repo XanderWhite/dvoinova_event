@@ -17,10 +17,29 @@
 }
 
 @keyframes anim_rotate {
-    // 0%{
-    //     // scale: 1;
-    // }
-    100%{
+     100%{
         transform: rotate(360deg);
     }
 }
+
+@keyframes slide-out-blurred-left {
+	100% {
+		transform: translateX(0) scaleY(1) scaleX(1);
+
+		transform-origin: 50% 50%;
+		filter: blur(0);
+		opacity: 1;
+	}
+
+}
+@keyframes slide-out-blurred-right {
+
+    100% {
+        transform: translateX(0) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
+    }
+
+}
+

@@ -1,0 +1,51 @@
+.how {
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: center;
+		gap: 60px;
+
+
+	}
+
+	&__item {
+		font-family: "RobotoSlab-Regular", sans-serif;
+		font-size: 16px;
+
+		padding: 20px;
+
+		background-color: $color-lightgrey;
+        box-shadow: 4px 4px 6px 0px rgba($color: #000000, $alpha: 0.1);
+		border-radius: 20px;
+
+        &.left{
+            transform: translateX(-500px) scaleX(2) scaleY(0.2);
+            transform-origin: 100% 50%;
+            filter: blur(40px);
+            opacity: 0;
+
+            &.active {
+                animation: slide-out-blurred-left .35s linear both;
+            }
+        }
+
+        &.right{
+            transform: translateX(500px) scaleX(2) scaleY(0.2);
+            transform-origin: 0% 50%;
+            filter: blur(40px);
+            opacity: 0;
+
+            &.active {
+                animation: slide-out-blurred-right .35s linear both;
+            }
+        }
+
+
+
+	}
+}
