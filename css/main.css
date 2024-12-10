@@ -198,45 +198,19 @@ textarea {
             transform: rotate(360deg);
   }
 }
-@-webkit-keyframes slide-out-blurred-left {
+@-webkit-keyframes show-out {
   100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-            transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     -webkit-filter: blur(0);
             filter: blur(0);
     opacity: 1;
   }
 }
-@keyframes slide-out-blurred-left {
+@keyframes show-out {
   100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-            transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes slide-out-blurred-right {
-  100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-            transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-            filter: blur(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-out-blurred-right {
-  100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-            transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     -webkit-filter: blur(0);
             filter: blur(0);
     opacity: 1;
@@ -709,6 +683,14 @@ textarea {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.intro__content__container.active {
+  -webkit-animation: show-out 0.6s linear both;
+          animation: show-out 0.6s linear both;
 }
 
 .intro-left {
@@ -848,42 +830,66 @@ textarea {
   font-family: "RobotoSlab-Regular", sans-serif;
   font-size: 16px;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
   background-color: #f3f0fb;
   -webkit-box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
 }
 .how__item.left {
-  -webkit-transform: translateX(-500px) scaleX(2) scaleY(0.2);
-      -ms-transform: translateX(-500px) scaleX(2) scaleY(0.2);
-          transform: translateX(-500px) scaleX(2) scaleY(0.2);
-  -webkit-transform-origin: 100% 50%;
-      -ms-transform-origin: 100% 50%;
-          transform-origin: 100% 50%;
-  -webkit-filter: blur(40px);
-          filter: blur(40px);
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
   opacity: 0;
 }
 .how__item.left.active {
-  -webkit-animation: slide-out-blurred-left 0.35s linear both;
-          animation: slide-out-blurred-left 0.35s linear both;
+  -webkit-animation: show-out 0.6s linear both;
+          animation: show-out 0.6s linear both;
 }
 .how__item.right {
-  -webkit-transform: translateX(500px) scaleX(2) scaleY(0.2);
-      -ms-transform: translateX(500px) scaleX(2) scaleY(0.2);
-          transform: translateX(500px) scaleX(2) scaleY(0.2);
-  -webkit-transform-origin: 0% 50%;
-      -ms-transform-origin: 0% 50%;
-          transform-origin: 0% 50%;
-  -webkit-filter: blur(40px);
-          filter: blur(40px);
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
   opacity: 0;
 }
 .how__item.right.active {
-  -webkit-animation: slide-out-blurred-right 0.35s linear both;
-          animation: slide-out-blurred-right 0.35s linear both;
+  -webkit-animation: show-out 0.6s linear both;
+          animation: show-out 0.6s linear both;
 }
 
+/* ============================= */
+/* Media */
+@media (max-width: 700px) {
+  .how__content {
+    gap: 20px;
+  }
+  .how__row {
+    gap: 20px;
+  }
+}
+@media (max-width: 470px) {
+  .how__row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .how__item {
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+}
 .separator {
   background-color: #e04eb3;
   color: #fff;

@@ -40,7 +40,6 @@
 .intro__content {
 	min-height: 622px;
 	padding: 75px 100px;
-	// background-color: $color-dark;
 	background-color: $color-purple;
 	color: $color-white;
 
@@ -51,6 +50,12 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
+		opacity: 0;
+		transform: translateX(100%);
+
+		&.active{
+			animation:show-out .6s linear both;
+		}
 	}
 }
 
