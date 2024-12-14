@@ -165,9 +165,8 @@
 
 @media (max-height: 500px) {
 	.nav {
-		height: calc(100vh - $header-height);
-	}
-
+        max-height: calc(100vh - 87px);
+    }
 }
 
 @media (max-height: 370px) {
@@ -176,7 +175,7 @@ height: $header-height-min;
 }
 
 .nav {
-	height: calc(100vh - $header-height-min);
+	max-height: calc(100vh - $header-height-min);
 
 	&.open {
 		translate: 0 calc(100% + $header-height-min);

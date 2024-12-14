@@ -28,7 +28,7 @@ function checkHow() {
 function checkInto() {
 	const rect = introContainer.getBoundingClientRect();
 
-	if (rect.top * 1.1 <= window.innerHeight) {
+	if (rect.top * 1.05 <= window.innerHeight) {
 		introContainer.classList.add("active");
 	} else {
 		introContainer.classList.remove("active");

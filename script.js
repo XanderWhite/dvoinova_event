@@ -11,9 +11,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
 
         const header = document.getElementById('header');
-        const headerOffset = header.offsetHeight; // Высота фиксированного меню
         const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY;// - headerOffset;
+        const offsetPosition = elementPosition + window.scrollY;
 
             window.scrollTo({
             top: offsetPosition,

@@ -219,7 +219,6 @@ textarea {
 .page {
   margin: 0 auto;
   min-height: 100vh;
-  overflow: hidden;
   background-color: rgba(142, 106, 214, 0.3);
 }
 
@@ -597,7 +596,7 @@ textarea {
 }
 @media (max-height: 500px) {
   .nav {
-    height: calc(100vh - 87px);
+    max-height: calc(100vh - 87px);
   }
 }
 @media (max-height: 370px) {
@@ -605,7 +604,7 @@ textarea {
     height: 56px;
   }
   .nav {
-    height: calc(100vh - 56px);
+    max-height: calc(100vh - 56px);
   }
   .nav.open {
     translate: 0 calc(100% + 56px);
@@ -639,10 +638,17 @@ textarea {
   width: 100%;
   height: 100%;
 }
+.intro__title {
+  color: #fff;
+}
 .intro__text {
   font-family: "RobotoSlab-Regular", sans-serif;
   font-size: 14px;
   margin-bottom: 10px;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }
 .intro__title {
   margin-bottom: 35px;
@@ -655,12 +661,20 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }
 .intro__title__span {
   color: #e04eb3;
 }
 .intro__btn {
   margin-top: 20px;
+  opacity: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .intro__content {
@@ -668,6 +682,7 @@ textarea {
   padding: 75px 100px;
   background-color: rgb(58, 1, 54);
   color: #fff;
+  overflow: hidden;
 }
 .intro__content__container {
   max-width: 1000px;
@@ -683,14 +698,10 @@ textarea {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  opacity: 0;
-  -webkit-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-          transform: translateX(100%);
 }
-.intro__content__container.active {
-  -webkit-animation: show-out 0.6s linear both;
-          animation: show-out 0.6s linear both;
+.intro__content__container.active .intro__title, .intro__content__container.active .intro__text, .intro__content__container.active .intro__btn {
+  -webkit-animation: show-out 0.4s linear both;
+          animation: show-out 0.4s linear both;
 }
 
 .intro-left {
@@ -705,7 +716,17 @@ textarea {
     grid-template-rows: 622px auto;
   }
   .intro__content {
-    padding: 50px;
+    padding: 60px 50px;
+    min-height: auto;
+  }
+  .intro__title {
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  .intro.active .intro__title {
+    -webkit-animation: show-out 0.4s linear both;
+            animation: show-out 0.4s linear both;
   }
 }
 @media (max-width: 500px) {
@@ -732,14 +753,27 @@ textarea {
 
 .service {
   width: 100%;
-  background-color: #f3f0fb;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  min-width: auto;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+}
+.service:hover .service__inner {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.service__inner {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
   position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  background-color: #f3f0fb;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
-.service::after {
+.service__inner::after {
   opacity: 0;
   content: "";
   display: block;
@@ -752,7 +786,7 @@ textarea {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.service:hover::after {
+.service__inner:hover::after {
   opacity: 1;
 }
 .service__pic {
@@ -772,7 +806,8 @@ textarea {
   font-weight: 700;
   font-size: 16px;
 }
-.service__content {
+.service__content, .service__back {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -783,8 +818,17 @@ textarea {
   padding: 30px;
   gap: 10px;
 }
+.service__content {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
+}
 .service__list {
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
   list-style: none;
+  width: 100%;
 }
 .service__item {
   position: relative;
@@ -798,6 +842,28 @@ textarea {
   color: #e04eb3;
   font-size: 16px;
 }
+.service__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.service__front {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
 
 /* ============================= */
 /* media */
@@ -806,6 +872,57 @@ textarea {
     grid-template-columns: auto;
     gap: 30px;
   }
+  .service:hover .service__inner {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+  .service__front {
+    -webkit-transform-style: flat;
+            transform-style: flat;
+  }
+  .service__back {
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    background-color: rgba(58, 1, 54, 0.9);
+    color: #fff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 0;
+    -webkit-transform-style: flat;
+            transform-style: flat;
+  }
+  .service:hover .service__back {
+    opacity: 1;
+  }
+  .service__item {
+    line-height: clamp(1.25rem, 0.908rem + 1.56vw, 1.875rem);
+  }
+}
+@media (max-width: 450px) {
+  .service:hover .service__inner {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+  .service__front {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  .service__back {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-color: transparent;
+    color: inherit;
+    -webkit-transition: none;
+    transition: none;
+    opacity: 1;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+}
+.how {
+  overflow: hidden;
 }
 .how__content {
   display: -webkit-box;
