@@ -17,6 +17,15 @@
 		transform: rotateY(180deg);
 	}
 
+	&.rotated &__inner {
+		transform: rotateY(180deg);
+	}
+
+	&.show-back &__back,
+	&.show-back &__front::after {
+		opacity: 1;
+	}
+
 	&__inner {
 		width: 100%;
 		height: 100%;
@@ -54,7 +63,7 @@
 		justify-content: center;
 		padding: 30px;
 		gap: 10px;
-translate: 0 -50%;
+		translate: 0 -50%;
 		backface-visibility: hidden;
 		transform-style: preserve-3d;
 		transform: rotateY(180deg);
@@ -113,8 +122,6 @@ translate: 0 -50%;
 			font-size: 16px;
 		}
 	}
-
-
 }
 
 /* ============================= */
@@ -136,9 +143,9 @@ translate: 0 -50%;
 		&__front {
 			transform-style: flat;
 
-			&::after{
+			&::after {
 				display: block;
-				content: '';
+				content: "";
 				position: absolute;
 				left: 0;
 				top: 0;
@@ -148,8 +155,6 @@ translate: 0 -50%;
 				transition: 0.5s;
 				opacity: 0;
 			}
-
-
 		}
 
 		&__back {
@@ -181,6 +186,10 @@ translate: 0 -50%;
 
 		&__front {
 			transform-style: preserve-3d;
+
+			&::after {
+				display: none;
+			}
 		}
 
 		&__back {
