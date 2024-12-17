@@ -10,7 +10,7 @@
 .service {
 	width: 100%;
 	min-width: auto;
-
+cursor: pointer;
 	perspective: 1500px;
 
 	&.rotated &__inner {

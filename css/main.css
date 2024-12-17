@@ -211,6 +211,7 @@ textarea {
   }
 }
 .page {
+  margin-top: 87px;
   background-color: rgba(142, 106, 214, 0.3);
   display: grid; /* Используем Grid */
   grid-template-rows: 1fr auto; /* Заголовок, контент, футер */
@@ -627,7 +628,6 @@ textarea {
   }
 }
 .intro {
-  margin-top: 87px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -755,6 +755,7 @@ textarea {
 .service {
   width: 100%;
   min-width: auto;
+  cursor: pointer;
   -webkit-perspective: 1500px;
           perspective: 1500px;
 }
