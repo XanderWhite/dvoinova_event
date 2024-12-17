@@ -1,5 +1,5 @@
 .intro {
-	padding-top: $header-height;
+	margin-top: $header-height;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 
@@ -111,14 +111,6 @@
 		animation:show-out .4s linear both;
 	}
 	}
-
-
-
-
-
-
-
-
 }
 
 @media (max-width: 500px) {
@@ -137,7 +129,7 @@
 
 @media (max-height: 370px) {
 	.intro {
-		padding-top: $header-height-min;
+		margin-top: $header-height-min;
 		grid-template-rows: calc(100vh - $header-height-min) auto;
 	}
 }

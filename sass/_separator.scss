@@ -1,6 +1,7 @@
 .separator {
 	background-color: $color-pink;
 	color: $color-white;
+	overflow: hidden;
 }
 .separator__inner {
 	padding-top: 50px;
@@ -9,6 +10,8 @@
 	gap: 30px;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
+
 }
 
 .separator__title {
@@ -25,7 +28,6 @@
 
 @media (max-width: 990px) {
 	.separator__inner {
-		flex-wrap: wrap;
 		justify-content: center;
 	}
 

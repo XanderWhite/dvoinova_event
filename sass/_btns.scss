@@ -1,142 +1,138 @@
 .btn-menu {
-   justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    z-index: 2;
-    display: none;
-    background-color: transparent;
-    flex-shrink: 0;
+	justify-content: center;
+	align-items: center;
+	width: 30px;
+	height: 25px;
+	position: relative;
+	z-index: 2;
+	display: none;
+	background-color: transparent;
+	flex-shrink: 0;
 
-       &:focus {
-           animation: anim_pulse .5s infinite   both alternate ease-in-out;
-           outline: none;
-    }
+	&:focus {
+		animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+		outline: none;
+	}
 
-    &__line {
-      display: block;
-      width: 100%;
-      height: 4px;
-      border-radius: 1px;
-      position: absolute;
-      margin: auto;
+	&__line {
+		display: block;
+		width: 100%;
+		height: 4px;
+		border-radius: 1px;
+		position: absolute;
+		margin: auto;
 
-      background-color: $color-pink;
+		background-color: $color-pink;
 
-      transition: 0.2s linear;
+		transition: 0.2s linear;
+	}
 
-    }
+	&::before,
+	&::after {
+		position: absolute;
+		content: "";
+		display: block;
+		width: 100%;
+		height: 4px;
+		left: 0;
+		top: 0px;
 
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      display: block;
-      width: 100%;
-      height: 4px;
-      left: 0;
-      top: 0px;
+		background-color: $color-pink;
+		border-radius: 1px;
 
-      background-color: $color-pink;
-      border-radius: 1px;
+		transition: transform 0.2s linear;
+	}
 
-      transition: transform 0.2s linear;
-    }
+	&::after {
+		top: auto;
+		bottom: 0px;
+	}
 
-    &::after {
-      top: auto;
-      bottom: 0px;
-    }
+	&.active {
+		.btn-menu__line {
+			opacity: 0;
+		}
 
-    &.active {
-      .btn-menu__line {
-        opacity: 0;
-      }
+		&::before {
+			transform: translateY(10px) rotate(45deg);
+		}
 
-      &::before {
-        transform: translateY(10px) rotate(45deg);
-      }
+		&::after {
+			transform: translateY(-11px) rotate(-45deg);
+		}
+	}
+}
 
-      &::after {
-        transform: translateY(-11px) rotate(-45deg);
-      }
-    }
-  }
+.btn-link {
+	border-radius: 5px;
+	font-family: "HelveticaNeue-Bold", sans-serif;
+	font-weight: 700;
+	font-size: 15px;
 
-  .btn-link {
-    border-radius: 5px;
-    font-family: "HelveticaNeue-Bold", sans-serif;
-    font-weight: 700;
-    font-size: 15px;
+	&:focus {
+		animation: anim_pulse_small 0.5s infinite both alternate ease-in-out;
+		outline: none;
+	}
 
-    &:focus {
-      animation: anim_pulse_small 0.5s infinite both alternate ease-in-out;
-      outline: none;
-    }
+	&_dark {
+		color: $color-white;
+		background-color: $color-purple;
+		padding: 15px 30px;
+		font-size: 16px;
+		text-transform: uppercase;
+		white-space: nowrap;
+		text-wrap: auto;
 
-    &_dark{
-      color: $color-white;
-      // background-color: $color-black;
-      background-color: $color-purple;
-          padding: 15px 30px;
-      font-size: 16px;
-      text-transform: uppercase;
-      white-space: nowrap;
+		&:hover,
+		&:focus {
+			background-color: $color-white;
+			color: $color-purple;
+		}
+	}
 
-    &:hover,
-    &:focus{
-      background-color:$color-white ;
-      // color:  $color-black;
-      color:  $color-purple;
-    }
-    }
+	&_pink-hover-light,
+	&_pink-hover-dark {
+		background-color: $color-pink;
+		border-radius: 5px;
+		padding: 15px 30px;
+		text-transform: uppercase;
+		// color: $color-dark;
+		color: $color-purple;
+		display: inline-block;
+		text-align: center;
 
-    &_pink-hover-light,
-    &_pink-hover-dark {
-      background-color: $color-pink;
-      border-radius: 5px;
-      padding: 15px 30px;
-      text-transform: uppercase;
-      // color: $color-dark;
-      color: $color-purple;
-      display: inline-block;
-      text-align: center;
+		&:hover,
+		&:focus {
+			// color: $color-dark;
+			background-color: $color-white;
+		}
+	}
 
-        &:hover,
-      &:focus {
-        // color: $color-dark;
-        background-color: $color-white;
-      }
-    }
+	&_pink-hover-dark {
+		&:hover,
+		&:focus {
+			// background-color: $color-dark;
+			background-color: $color-purple;
+			color: $color-white;
+		}
+	}
+}
 
-    &_pink-hover-dark {
-      &:hover,
-      &:focus {
-        // background-color: $color-dark;
-        background-color: $color-purple;
-        color: $color-white;
-      }
-    }
-  }
+#btn-showModal-present {
+	animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+}
 
+/* ============================= */
+/* media */
 
-  #btn-showModal-present{
-    animation: anim_pulse .5s infinite   both alternate ease-in-out;
-  }
+@media (max-width: 990px) {
+	.btn-menu {
+		display: flex;
+	}
+}
 
-
-  /* ============================= */
-  /* media */
-
-  @media (max-width: 990px) {
-    .btn-menu {
-      display: flex;
-    }
-  }
-
-  @media (max-width: 500px) {
-    .btn-link_pink {
-      align-self: center;
-    }
-  }
+@media (max-width: 500px) {
+	.btn-link_pink {
+		align-self: center;
+	}
+}

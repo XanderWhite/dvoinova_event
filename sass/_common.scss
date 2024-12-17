@@ -1,8 +1,12 @@
 .page {
-	margin: 0 auto;
-	min-height: 100vh;
+	// margin: 0 auto;
+	// min-height: 100vh;
 	// overflow: hidden;
 	background-color: rgba(142, 106, 214,.3);
+
+	display: grid; /* Используем Grid */
+    grid-template-rows:  1fr auto; /* Заголовок, контент, футер */
+    min-height: 100vh;
 }
 
 .container {

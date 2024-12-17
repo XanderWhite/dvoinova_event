@@ -10,7 +10,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 		const targetId = this.getAttribute("href");
 		const targetElement = document.querySelector(targetId);
 
-		const header = document.getElementById("header");
 		const elementPosition = targetElement.getBoundingClientRect().top;
 		const offsetPosition = elementPosition + window.scrollY;
 
@@ -45,10 +44,10 @@ window.addEventListener("scroll", () => {
 	if (Math.abs(currentScrollTop - lastScrollTop) >= threshold) {
 		if (currentScrollTop > lastScrollTop) {
 			// Скролл вниз
-			header.style.transform = "translateY(-100%)"; // Скрыть хедер
+			header.classList.add('hidden');
 		} else {
 			// Скролл вверх
-			header.style.transform = "translateY(0)"; // Показать хедер
+			header.classList.remove('hidden');
 		}
 		lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных браузеров
 	}
@@ -56,26 +55,28 @@ window.addEventListener("scroll", () => {
 
 //==========================================================================
 //services
-const social__intro = document.querySelectorAll(".service__inner");
+const service__intro = document.querySelectorAll(".service__inner");
 
-// Изменяем высоту передней части карточки social, если она ниже, чем ее задняя часть
-function changeSocialFrontHeight() {
-	social__intro.forEach((item) => {
-		const socialFront = item.querySelector(".service__front"),
-			socialBack = item.querySelector(".service__back"),
-			socialFrontHeight = socialFront.offsetHeight,
-			socialBackHeight = socialBack.offsetHeight;
+// Изменяем высоту передней части карточки service, если она ниже, чем ее задняя часть
+function changeServiceFrontHeight() {
+	service__intro.forEach((item) => {
+		const serviceFront = item.querySelector(".service__front"),
+			serviceBack = item.querySelector(".service__back"),
+			serviceFrontHeight = serviceFront.offsetHeight,
+			serviceBackHeight = serviceBack.offsetHeight;
 
-		if (socialFrontHeight <= socialBackHeight) {
-			socialFront.style.height = socialBackHeight + "px";
+		if (serviceFrontHeight <= serviceBackHeight) {
+			serviceFront.style.height = serviceBackHeight + "px";
 		} else {
-			socialFront.style.height = "auto";
+			serviceFront.style.height = "auto";
 		}
 	});
 }
 
-window.onload = changeSocialFrontHeight;
-window.addEventListener("resize", changeSocialFrontHeight);
+window.onload = changeServiceFrontHeight;
+window.addEventListener("resize", changeServiceFrontHeight);
+
+
 
 //=========================
 //sosial

@@ -13,10 +13,6 @@
 
 	perspective: 1500px;
 
-	&:hover &__inner {
-		transform: rotateY(180deg);
-	}
-
 	&.rotated &__inner {
 		transform: rotateY(180deg);
 	}
@@ -46,10 +42,6 @@
 			bottom: 0px;
 			background-color: $color-pink;
 			transition: 0.3s;
-		}
-
-		&:hover::after {
-			opacity: 1;
 		}
 	}
 
@@ -136,9 +128,9 @@
 	}
 
 	.service {
-		&:hover &__inner {
-			transform: none;
-		}
+		// &:hover &__inner {
+		// 	transform: none;
+		// }
 
 		&__front {
 			transform-style: flat;
@@ -165,14 +157,7 @@
 			opacity: 0;
 		}
 
-		&:hover &__back {
-			opacity: 1;
-		}
-		&:hover &__front::after {
-			opacity: 1;
-		}
-
-		&__item {
+				&__item {
 			line-height: clamp(1.25rem, 0.908rem + 1.56vw, 1.875rem);
 		}
 	}
@@ -180,10 +165,6 @@
 
 @media (max-width: 450px) {
 	.service {
-		&:hover &__inner {
-			transform: rotateY(180deg);
-		}
-
 		&__front {
 			transform-style: preserve-3d;
 
