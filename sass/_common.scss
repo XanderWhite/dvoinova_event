@@ -1,13 +1,10 @@
-.page {
-	// margin: 0 auto;
-	// min-height: 100vh;
-	// overflow: hidden;
-	margin-top: $header-height;
+.page__inner{
+	overflow: hidden;
 	background-color: rgba(142, 106, 214,.3);
 
 	display: grid; /* Используем Grid */
-    grid-template-rows:  1fr auto; /* Заголовок, контент, футер */
-    min-height: 100vh;
+	grid-template-rows:  1fr auto; /* Заголовок, контент, футер */
+	min-height: 100vh;
 }
 
 .container {
@@ -21,6 +18,11 @@
 .no-scroll {
 	overflow: hidden;
 	height: 100%;
+}
+
+.main{
+	display: flex;
+	flex-direction: column;
 }
 
 .title {
@@ -72,5 +74,10 @@ z-index: 1000;
 @media (max-width: 990px) {
 	.container {
 		max-width: 700px;
+	}
+}
+@media (max-height: 370px) {
+	.page__inner {
+		// margin-top: $header-height-min;
 	}
 }

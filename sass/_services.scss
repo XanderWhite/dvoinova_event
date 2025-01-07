@@ -10,17 +10,8 @@
 .service {
 	width: 100%;
 	min-width: auto;
-cursor: pointer;
+	cursor: pointer;
 	perspective: 1500px;
-
-	&.rotated &__inner {
-		transform: rotateY(180deg);
-	}
-
-	&.show-back &__back,
-	&.show-back &__front::after {
-		opacity: 1;
-	}
 
 	&__inner {
 		width: 100%;
@@ -114,73 +105,59 @@ cursor: pointer;
 			font-size: 16px;
 		}
 	}
+
+	&.rotate &__inner {
+		transform: rotateY(180deg);
+	}
+
+	&.show-back &__back,
+	&.show-back &__front::after {
+		opacity: 1;
+	}
 }
 
 /* ============================= */
 /* media */
 
 @media (max-width: 990px) {
-	.services {
-		&__content {
+	.services__content {
 			grid-template-columns: auto;
 			gap: 30px;
 		}
-	}
 
-	.service {
-		// &:hover &__inner {
-		// 	transform: none;
-		// }
-
-		&__front {
-			transform-style: flat;
-
-			&::after {
-				display: block;
-				content: "";
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba($color: $color-purple, $alpha: 0.9);
-				transition: 0.5s;
-				opacity: 0;
-			}
-		}
-
-		&__back {
-			transform: none;
-			color: $color-white;
-			transition: 0.5s;
-			transform-style: flat;
-			opacity: 0;
-		}
-
-				&__item {
+	.service__item {
 			line-height: clamp(1.25rem, 0.908rem + 1.56vw, 1.875rem);
 		}
 	}
-}
 
-@media (max-width: 450px) {
+
+@media (min-width: 449px) and (max-width: 989px) {
 	.service {
 		&__front {
-			transform-style: preserve-3d;
+				transform-style: flat;
 
-			&::after {
-				display: none;
+				&::after {
+					display: block;
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background-color: rgba($color: $color-purple, $alpha: 0.9);
+					transition: 0.5s;
+					opacity: 0;
+				}
 			}
-		}
 
-		&__back {
-			min-height: auto;
-			transform: rotateY(180deg);
-			background-color: transparent;
-			color: inherit;
-			transition: none;
-			opacity: 1;
-			transform-style: preserve-3d;
-		}
+			&__back {
+				transform: none;
+				color: $color-white;
+				transition: 0.5s;
+				transform-style: flat;
+				opacity: 0;
+			}
+
 	}
 }
+

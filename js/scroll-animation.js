@@ -13,6 +13,8 @@ window.addEventListener("load", () => {
 	checkIntro();
 });
 
+window.addEventListener('resize', checkService);
+
 //Проверяем высоту блока how
 function checkHow() {
 	elements.forEach((element) => {
@@ -43,23 +45,30 @@ function checkIntro() {
 	}
 }
 
+//---------------------------------------
 //Проверяем высоту карточек service
+
+const autoExpandStates = new Map();
+
 function checkService() {
+	const THRESHOLD = 200;
+
 	services.forEach((s) => {
 		const rect = s.getBoundingClientRect();
+		const isVisible = rect.top + THRESHOLD <= window.innerHeight;
+		const isAutoExpandEnabled = autoExpandStates.get(s) || false;
 
-		if (window.innerWidth >= 990 || window.innerWidth < 450) {
-			if (rect.top + 200 <= window.innerHeight) {
-				s.classList.remove("rotated");
-			} else {
-				s.classList.add("rotated");
+		const className = getServiceAddedClassName();
+
+		if (isVisible) {
+			if (isAutoExpandEnabled) {
+				s.classList.remove(className);
+				autoExpandStates.set(s, false);
 			}
-		}else{
-			if (rect.top + 200 <= window.innerHeight) {
-				s.classList.remove("show-back");
-			} else {
-				s.classList.add("show-back");
-			}
+		} else {
+			s.classList.add(className);
+			autoExpandStates.set(s, true);
 		}
 	});
 }
+

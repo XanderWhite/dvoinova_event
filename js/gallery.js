@@ -4,15 +4,15 @@ const modalContent = document.getElementById("modal-content");
 const closeButton = document.getElementById("modal-gallery__close-btn");
 let currentSlide = 0;
 
-fetch("get_images.php")
+fetch("../php/get_images.php") // (ajax_object.get_images_url)
 	.then((response) => response.json())
 	.then((data) => {
 		images = data;
 		let limit = 9;
 		const pathname = window.location.pathname;
 
-		if (pathname === "/" || pathname === "/index.html")
-			limit = images.length > limit ? limit : images.length;
+		if (pathname === "/" || pathname === "/index.html") //	if (ajax_object.is_home)
+			limit = images.length > limit  ? limit : images.length;
 		else limit = images.length;
 
 		// Динамическое создание галереи
@@ -80,7 +80,7 @@ function closeModal() {
 const updateDisplay = () => {
 	const pathname = window.location.pathname;
 
-	if (pathname === "/" || pathname.endsWith("index.html")) {
+	if (pathname === "/" || pathname.endsWith("index.html")) { //if (ajax_object.is_home) {
 		const display = window.innerWidth >= 767 ? "none" : "block";
 
 		const items = document.querySelectorAll(".photo-img");

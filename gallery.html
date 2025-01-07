@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="page page_gallery">
+    <div class="page__inner page__inner_gallery">
         <h1 class="visually-hidden">Ведущий</h1>
 
         <!-- Header -->
@@ -23,7 +23,7 @@
                 <nav class="nav" id="nav">
                     <ul class="menu">
                         <li class="menu__item">
-                            <a class="menu__link " href="/index.html" data-scroll="#">Главная</a>
+                            <a class="menu__link " href="/" data-scroll="#">Главная</a>
                         </li>
                         <li class="menu__item">
                             <a class="menu__link" href="/index.html?#services" data-scroll="#">Услуги</a>
@@ -35,7 +35,7 @@
                             <a class="menu__link" href="/index.html?#contacts" data-scroll="">Контакты</a>
                         </li>
                         <li class="menu__item">
-                            <a class="menu__link" href="#" data-scroll="">Галерея</a>
+                            <a class="menu__link" href="/gallery.html" data-scroll="">Галерея</a>
                         </li>
                     </ul>
                 </nav>
@@ -46,14 +46,14 @@
             </div>
         </header> <!-- /.header -->
 
-        <main class="main main_gallery">
-            <h1 class="main__title">Моя галерея</h1>
-
-            <div class='gallery gallery_page'>
-                <div class="container gallery__inner">
-                    <div id="photo"></div>
-                </div>
-            </div> <!-- /gallery -->
+        <main class="main">
+                <!-- Галерея -->
+                <section class='gallery gallery_page-gallery'>
+                    <div class="gallery__inner container ">
+                    <h2 class="title">Моя галерея</h2>
+                                            <div id="photo"></div>
+                                        </div>
+                </section> <!-- /gallery -->
 
         </main>
         <footer class="footer" id="contacts">
@@ -128,13 +128,18 @@
 
             </div>
         </footer>
-    </div> <!-- /page -->
+    </div> <!-- /page__inner -->
 
         <!-- Модальные окна -->
          <dialog id="modal-gallery">
         <div class="slider-modal " id="modal-content">
         </div>
-        <span id="modal-gallery__close-btn" class="elem-close"><svg viewBox="0 0 32 32" class="elem-close__cross"><line class="elem-close__cross__line" x1="7" x2="25" y1="7" y2="25"/><line class="elem-close__cross__line" x1="7" x2="25" y1="25" y2="7"/></svg></span>
+        <span id="modal-gallery__close-btn" class="elem-close">
+            <svg viewBox="0 0 32 32" class="elem-close__cross-svg">
+                <line class="elem-close__cross-svg__line" x1="7" x2="25" y1="7" y2="25" />
+                <line class="elem-close__cross-svg__line" x1="7" x2="25" y1="25" y2="7" />
+            </svg>
+        </span>
     </dialog>
 
 

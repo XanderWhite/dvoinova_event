@@ -18,7 +18,7 @@
 	}
 }
 
-.elem-close__cross {
+.elem-close__cross-svg {
 	width: 26px;
 	height: 26px;
 
@@ -31,6 +31,7 @@
 	}
 }
 
+//modal-Gallery (ширина контента для картинки)
 #modal-content {
 	flex:1;
 	width: 100%;
@@ -39,35 +40,25 @@
 }
 
 //=====================
-//modal-present
+//modal-Dialog (с формой)
 
-#modal-present{
-
-    &[open]{
-        display: flex;
-    }
-
-    &__close-btn {
-        position: absolute;
-        top: -10px;
-        right: -10px;
-    }
+.modal[open]{
+    display: flex;
 }
 
-.modal-dialog {
+.modal__dialog {
     margin: auto;
     padding: 10px;
     position: relative;
 }
 
-.form-present {
+.modal__form {
     max-width: 500px;
     width: 100%;
 display: flex;
 flex-direction: column;
 gap: 20px;
 padding: 10px;
-
 
     text-align: center;
     color: $color-white;
@@ -92,11 +83,6 @@ padding: 10px;
     &._sending::after{
         opacity: 1;
         visibility: visible;
-    }
-
-    &__title {
-        margin-bottom: 20px;
-        line-height: 1.2;
     }
 
     &__lbl{

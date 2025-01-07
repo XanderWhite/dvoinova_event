@@ -1,11 +1,11 @@
 .gallery {
 	background-color: $color-lightgrey;
 
-	&_page {
-		background-color: transparent;
+	&_page-gallery {
+		background-color: inherit;
 	}
 
-	&__inner {
+		&__inner {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -16,7 +16,8 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 10px;
-	margin-bottom: 30px;
+
+		margin: 0 -20px 30px;
 }
 
 .photo-img {
@@ -40,16 +41,16 @@
 	#photo {
 		grid-template-columns: repeat(3, 1fr);
 		gap: 10px;
+		margin: 0 -20px 30px;
 	}
 }
 @media (max-width: 420px) {
 	#photo {
 		grid-template-columns: repeat(3, 1fr);
 		gap: 3px;
+
+		margin: 0 -27px 30px;
 	}
 
-	.gallery__inner {
-		padding-left: 3px;
-		padding-right: 3px;
-	}
+
 }

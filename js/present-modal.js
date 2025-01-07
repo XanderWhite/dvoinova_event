@@ -1,5 +1,5 @@
+//Обработка Формы с Заказом подарка
 
-//Форма отзывов
 document.addEventListener("DOMContentLoaded", function () {
 	const form = document.getElementById("form");
 	form.addEventListener("submit", formSend);
@@ -128,24 +128,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 });
 
+//===============================
 //Modal
-//==================
 
-const btnShowModalPresent = document.getElementById("btn-showModal-present");
-const modalPresent = document.getElementById("modal-present");
-const modalPresentCloseBtn = document.getElementById(
-	"modal-present__close-btn"
-);
-const dateInput = document.getElementById("input_date");
+const presentModal = document.getElementById("present-modal");
+const presentModalCloseBtn = document.getElementById("present-modal__close-btn");
 
-btnShowModalPresent.addEventListener("click", () => {
+const dateInput = document.getElementById("date-input");
+const presentShowModalBtn = document.getElementById("present-showModal-btn");
+
+presentShowModalBtn.addEventListener("click", () => {
 	document.body.classList.add("no-scroll");
-	modalPresent.showModal();
-	document.getElementById("input_name").focus();
+	presentModal.showModal();
+	document.getElementById("name-input").focus();
 });
 
-modalPresentCloseBtn.addEventListener("click", () => {
-	modalPresent.close();
+presentModalCloseBtn.addEventListener("click", () => {
+	presentModal.close();
 	document.body.classList.remove("no-scroll");
 });
 

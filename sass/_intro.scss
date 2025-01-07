@@ -104,13 +104,14 @@
 
 @media (max-height: 830px) and (max-width: 990px) {
 	.intro {
-		grid-template-rows: calc(100vh - $header-height) auto;
+		grid-template-rows: var(--element-height) auto;
+		
 	}
 }
 
-@media (max-height: 370px) {
-	.intro {
-		margin-top: $header-height-min;
-		grid-template-rows: calc(100vh - $header-height-min) auto;
-	}
-}
+// @media (max-height: 370px) {
+// 	.intro {
+
+// 		grid-template-rows: var(--element-height) auto;
+// 	}
+// }

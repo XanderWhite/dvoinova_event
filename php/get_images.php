@@ -1,5 +1,5 @@
 <?php
-$directory = './images/gallery';
+$directory = '../images/gallery';
 $images = glob($directory . "/*.{jpg,jpeg,png,gif,webp,JPG}", GLOB_BRACE);
 
 usort($images, function($a, $b) {

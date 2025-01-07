@@ -1,11 +1,11 @@
 .btn-menu {
+	display: none;
 	justify-content: center;
 	align-items: center;
 	width: 30px;
 	height: 25px;
 	position: relative;
 	z-index: 2;
-	display: none;
 	background-color: transparent;
 	flex-shrink: 0;
 
@@ -118,9 +118,10 @@
 	}
 }
 
-#btn-showModal-present {
+#present-showModal-btn {
 	animation: anim_pulse 0.5s infinite both alternate ease-in-out;
 }
+
 
 /* ============================= */
 /* media */

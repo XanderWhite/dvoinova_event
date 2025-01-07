@@ -19,19 +19,20 @@
 
 </head>
 
-<body>
-    <div class="page">
+<body class="page">
+    <div class="page__inner">
         <h1 class="visually-hidden">Ведущий</h1>
 
         <!-- Header -->
         <header class="header" id="header">
             <div class="container header__inner">
-                <h2 class="header__logo">Веду достойно себя и мероприятия </h2>
+                <h2 class="header__logo">Dvoinova_event<span class="header__logo__span">Веду достойно себя и мероприятия
+                    </span></h2>
 
                 <nav class="nav" id="nav">
                     <ul class="menu">
                         <li class="menu__item">
-                            <a class="menu__link " href="#" data-scroll="#">Главная</a>
+                            <a class="menu__link " href="/" data-scroll="#">Главная</a>
                         </li>
                         <li class="menu__item">
                             <a class="menu__link" href="#services" data-scroll="#">Услуги</a>
@@ -318,18 +319,19 @@
             <section class='separator '>
                 <div class="container separator__inner">
                     <h2 class="separator__title">Бронируй сейчас - <span>получи подарок</span></h2>
-                    <button type="button" id="btn-showModal-present" class="btn-link btn-link_dark">хочу подарок</a>
+                    <button type="button" id="present-showModal-btn" class="btn-link btn-link_dark">хочу подарок</a>
 
                 </div>
             </section> <!-- /separator -->
             <!-- Gallery -->
-            <section class='gallery'>
-                <div class="container gallery__inner">
+            <section class='gallery '>
+                <div class="gallery__inner container">
                     <h2 class="title">Галерея работ</h2>
                     <div id="photo"></div>
                     <a href="./gallery.html" class=" btn-link btn-link_pink-hover-dark" id="more_photo">еще
                         работы</a>
                 </div>
+
             </section> <!-- /gallery -->
 
             <!-- Reviews -->
@@ -338,7 +340,7 @@
                     <h2 class="title">Отзывы</h2>
 
                     <div class="reviews__block">
-                        <article class="review">
+                        <article class="review" style="padding-left: 5px;padding-right: 5px; font-size: 12px;">
                             <picture>
                                 <!-- <source type='image/avif' srcset='./images/.avif'>
                                     <source type='image/webp' srcset='./images/.webp'> -->
@@ -355,7 +357,7 @@
                                 рады, что выбрали тебя, точно не пожалели
                                 Самая Крутая ведущая. Желаю развиваться в этом направлении. Любим.❤️</p>
                         </article>
-                        <article class="review">
+                        <article class="review" id="congratulation" style="padding-left: 5px;padding-right: 5px; font-size: 12px;">
                             <picture>
                                 <!-- <source type='image/avif' srcset='./images/.avif'>
                                     <source type='image/webp' srcset='./images/.webp'> -->
@@ -363,14 +365,162 @@
                             </picture>
                             <div class="review__titles">
                                 <h3 class="review__title">Корпоратив</h3>
-                                <h4 class="review__subtitle">Вера</h4>
+                                <h3 class="review__title hide">HAPPY NEW YEAR, MY LOVE!!!</h3>
+                                <h4 class="review__subtitle">Верочка</h4>
                             </div>
-                            <p class="review__text">Наш коллектив хочет выразить благодарность Виктории за проведение
+                            <p class="review__text ">Наш коллектив хочет выразить благодарность Виктории за проведение
                                 нашего корпоративного мероприятия. Мы благодары за профессионализм, необычные, не
                                 повторяющиеся конкурсы, за отличное музыкальное оформление. Будем обращаться к Вике еще
                                 неоднократно. Спасибо!!! </p>
+<style>
+    div.review__text{
+        text-align: left;
+
+    }
+    .review__text p{
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .hide {
+        display: none;
+    }
+</style>
+                                <div class="review__text hide"> <p>❤️С новым годом, любовь моя!❤️<br>
+                                    Я люблю тебя, как сумасшедший.<br>
+                                    Вот подготовил отчет<br>
+                                    О том, что запомнил за год прошедший.</p>
+
+                                    <p>Помню, как ты вошла,<br>
+                                    Как взглядом бросила вскользь,<br>
+                                    И, поздоровавшись, заняла<br>
+                                    То место, где всё началось.</p>
+
+                                    <p>Помню, как я подсел —<br>
+                                    Я просто хотел помочь,<br>
+                                    Но что-то в груди кольнуло,<br>
+                                    Когда ты уехала прочь.</p>
+
+                                    <p>Я ждал, блин, тебя тогда...<br>
+                                    Сердце гоняло кровь,<br>
+                                    И я всё не мог понять —<br>
+                                    Увижу ли тебя вновь.</p>
+
+                                    <p>Но вот ты вернулась — я счастлив,<br>
+                                    Как прежде ты рядом сидишь,<br>
+                                    И я любуюсь твоим станом,<br>
+                                    А ты всё кодишь и молчишь.</p>
+
+                                    <p>Потом мы начали общаться,<br>
+                                    Немного, кинув пару слов,<br>
+                                    А я, блин, счастлив бесконечно<br>
+                                    И ждал тебя... увидеть вновь.</p>
+
+                                    <p>И вот, любимая, потом…<br>
+                                    (Здесь часть должна быть про мученья<br>
+                                    Но я решил её убрать,<br>
+                                    Не придавая ей значенья)</p>
+                                    ❤️❤️❤️
+
+                                    <p>Я помню твои губы,<br>
+                                    Твой взгляд, недоуменье,<br>
+                                    А я стоял и целовал,<br>
+                                    Пытаясь удержать мгновенье.</p>
+                                    ❤️❤️❤️
+                                    <p>Я помню, как я хотел<br>
+                                    Ещё поцелуев и губ твоих нежных,<br>
+                                    Как затаскивал тебя в лифт<br>
+                                    И как тонул в глазах безбрежных.</p>
+                                    ❤️❤️❤️
+                                    <p>В машине я помню, мы сидели,<br>
+                                    Как я тебе в любви признался,<br>
+                                    Как я хотел тебя обнять<br>
+                                    И смог к груди твоей прижаться.</p>
+                                    ❤️❤️❤️
+
+                                    <p>Я помню твой поцелуй,<br>
+                                    Твое желанье быть со мною рядом.<br>
+                                    Всё это было как во сне,<br>
+                                    И ничего мне больше не надо.</p>
+                                    ❤️❤️❤️
+
+                                    <p>Как мы гуляли по полям,<br>
+                                    Как я собак откидывал, играя,<br>
+                                    Как ты смеялась, удивлялась...<br>
+                                    И я был счастлив, помнишь, зая?</p>
+                                    ❤️❤️❤️
+
+                                    <p>Как робко я раздел тебя<br>
+                                    И ты присела на кроватку,<br>
+                                    Как я вошел в тебя, мурлыка,<br>
+                                    И ты отдалась без остатка.</p>
+                                    ❤️❤️❤️
+
+                                    <p>Как мы лежали, говорили<br>
+                                    Под нами смятая простыня,<br>
+                                    И ты на мне, добравшись к ушку,<br>
+                                    Вдруг прошептала, что любишь меня.</p>
+                                    ❤️❤️❤️
+
+                                    <p>А помнишь, как мы гуляли?<br>
+                                    Я в шею тебя целовал,<br>
+                                    Мы в доме чужом обнимались,<br>
+                                    А ты спешила на вокзал.</p>
+                                    ❤️❤️❤️
+                                    <p>Как мы сидели в ресторанах,<br>
+                                    В кофейнях, на скамейке в сквере,<br>
+                                    Гуляли мы, держась за ручки —<br>
+                                    Я счастлив, я с моею Верой!</p>
+                                    ❤️❤️❤️
+                                    <p>Я помню всё, всё то, что было,<br>
+                                    Все те мгновенья радости, любви,<br>
+                                    Что ты мне подарила,<br>
+                                    Что разлились в моей крови.</p>
+
+                                    <p>Конечно, помню я всё то,<br>
+                                    Что должен помнить человек,<br>
+                                    Когда он просто счастлив...<br>
+                                    Когда он полюбил на век.</p>
+
+                                    <p>Ну, как-то так, хотел тебе я<br>
+                                    Рассказать, что помню я...<br>
+                                    Конечно, я и не поэт,<br>
+                                    Зато любя, и для тебя!</p>
+
+                                    <p>И я хочу, чтоб у тебя<br>
+                                    Всё было так, как ты захочешь,<br>
+                                    Чтоб счастлива была всегда,<br>
+                                    Не важно, днём там или ночью.</p>
+
+                                    <p>Хочу быть вместе я с тобой,<br>
+                                    И в празднике, да и когда мир рухнет.<br>
+                                    Обнять и целовать тебя,<br>
+                                    Пусть наши чувства не утухнут.</p>
+
+                                    <p>И прикрывать тебя крылом,<br>
+                                    Хочу во что бы то ни стало,<br>
+                                    И охранять хочу твой сон,<br>
+                                    Чтобы грустить ты перестала.</p>
+
+                                    <p>Хочу быть рядом, несмотря<br>
+                                    На все проблемы и ненастья.<br>
+                                    Всё делать только для тебя<br>
+                                    И жить тобой, даря лишь счастье.</p>
+
+                                    <p>Ещё хотел бы я добавить:<br>
+                                    С новым годом, Верочка моя!<br>
+                                    Я всей душой тебя обожаю<br>
+                                    И всем сердцем люблю тебя!</p>
+
+                                    <p>Я только твой, а ты моя<br>
+                                    И вот финал моей поэмы)))<br>
+                                    Твой котик и лисенок я,<br>
+                                    А ты моя любимая Вера!</p>
+
+                                    <p>P.S. Чудеса бывают... ты просто верь.</p>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️ </div>
+
                         </article>
-                        <article class="review">
+                        <article class="review" style="padding-left: 5px;padding-right: 5px; font-size: 12px;">
                             <picture>
                                 <!-- <source type='image/avif' srcset='./images/.avif'>
                                     <source type='image/webp' srcset='./images/.webp'> -->
@@ -390,13 +540,14 @@
                         </article>
                     </div>
                 </div>
+                <button id="open-modal" class="button">Оставить отзыв</button>
             </section> <!-- /reviews -->
         </main>
 
         <footer class="footer" id="contacts">
             <div class="footer__inner container">
                 <section class="footer__block">
-                    <h2 class="footer__title footer__title_logo">МАКСИВЕНТ</h2>
+                    <h2 class="footer__title footer__title_logo">Виктория Двойнова</h2>
                     <p class="footer__text">Я предлагаю Вам свои услуги в качестве ведущего. Команда профессионалов,
                         работающая со мной, поможет сделать Ваш праздник именно тем неповторимым событием, приятные
                         воспоминания о котором будут увлекать Вас снова и снова!</p>
@@ -480,68 +631,107 @@
         </footer>
     </div>
 
-
+    <!-- ----------------------------------------------------- -->
     <!-- Модальные окна -->
+
     <dialog id="modal-gallery">
         <div class="slider-modal " id="modal-content">
         </div>
-        <span id="modal-gallery__close-btn" class="elem-close"><svg viewBox="0 0 32 32" class="elem-close__cross">
-                <line class="elem-close__cross__line" x1="7" x2="25" y1="7" y2="25" />
-                <line class="elem-close__cross__line" x1="7" x2="25" y1="25" y2="7" />
-            </svg></span>
+        <span id="modal-gallery__close-btn" class="elem-close">
+            <svg viewBox="0 0 32 32" class="elem-close__cross-svg">
+                <line class="elem-close__cross-svg__line" x1="7" x2="25" y1="7" y2="25" />
+                <line class="elem-close__cross-svg__line" x1="7" x2="25" y1="25" y2="7" />
+            </svg>
+        </span>
     </dialog>
 
 
-    <dialog id="modal-present">
-        <div class="modal-dialog">
-            <span id="modal-present__close-btn" class="elem-close"><svg viewBox="0 0 32 32" class="elem-close__cross">
-                    <line class="elem-close__cross__line" x1="7" x2="25" y1="7" y2="25" />
-                    <line class="elem-close__cross__line" x1="7" x2="25" y1="25" y2="7" />
-                </svg></span>
+    <dialog id="present-modal" class="modal">
+                <div class="modal__dialog">
+            <span id="present-modal__close-btn" class="elem-close">
+                <svg viewBox="0 0 32 32" class="elem-close__cross-svg">
+                    <line class="elem-close__cross-svg__line" x1="7" x2="25" y1="7" y2="25" />
+                    <line class="elem-close__cross-svg__line" x1="7" x2="25" y1="25" y2="7" />
+                </svg>
+            </span>
 
-            <form class="form-present" action="#" method="post" id="form-present">
-                <h1 class="form-present__title">Выберите подарок</h1>
+            <form class="modal__form" action="#" method="post" id="present-form">
+                <h2 class="modal__title">Выберите подарок</h2>
 
                 <div class="present">
                     <label class="present__lbl">
                         Видеоролик из ваших фото
-                        <input class="present__radio" type="radio" name="radio-present">
+                        <input class="present__radio" type="radio" name="present-radio">
                         <span class="present__span"></span>
                     </label>
                     <label class="present__lbl">
                         Помощь в организации мероприятия
-                        <input class="present__radio" type="radio" name="radio-present" checked>
+                        <input class="present__radio" type="radio" name="present-radio" checked>
                         <span class="present__span"></span>
                     </label>
                     <label class="present__lbl">
                         1 час работы диджея
-                        <input class="present__radio" type="radio" name="radio-present">
+                        <input class="present__radio" type="radio" name="present-radio">
                         <span class="present__span"></span>
                     </label>
                 </div>
 
-                <label class="form-present__lbl">
+                <label class="modal__form__lbl">
                     Укажите дату мероприятия
-                    <span class=" form-present__lbl__subtext">Если не знаете дату, оставьте поле пустым</span>
-                    <input class="form-present__input req" type="date" id="date" name="date" id="input_date">
+                    <span class=" modal__form__lbl__subtext">Если не знаете дату, оставьте поле пустым</span>
+                    <input class="modal__form__input req" type="date" name="date" id="date-input">
                 </label>
-                <label class="form-present__lbl">
+                <label class="modal__form__lbl">
                     Ваше имя
-                    <input class="form-present__input req" type="text" name="name" id="input_name">
+                    <input class="modal__form__input req" type="text" name="name" id="name-input">
                 </label>
 
-                <label class="form-present__lbl">
+                <label class="modal__form__lbl">
                     Введите номер телефона
-                    <input class="form-present__input req" id="input_phone" type="tel" name="phone" id="imput_phone"
+                    <input class="modal__form__input req" id="phone-input" type="tel" name="phone"
                         placeholder="8(999)999-99-99" maxlength="16" minlength="11">
                 </label>
 
-                <button class="btn-link btn-link_pink-hover-light" id="btn-ask-present" type="submit">Забронировать
+                <button class="btn-link btn-link_pink-hover-light" id="present-submit-btn" type="submit">Забронировать
                     подарок</button>
             </form>
         </div> <!-- /.modal-dialog -->
     </dialog><!-- /.modal-present -->
 
+
+
+    <dialog id="review-modal" class="modal">
+        <div class="modal__dialog">
+            <span id="review-modal__close-btn" class="elem-close"><svg viewBox="0 0 32 32" class="elem-close__cross-svg">
+                    <line class="elem-close__cross__line" x1="7" x2="25" y1="7" y2="25" />
+                    <line class="elem-close__cross__line" x1="7" x2="25" y1="25" y2="7" />
+                </svg></span>
+
+                <h2 class="modal__title">Оставьте свой отзыв</h2>
+
+                <form id="review-form">
+
+                    <label class="modal__form__lbl">
+                        Название события
+                        <input class="modal__form__input req" type="text" id="event-input" name="event" >
+                    </label>
+                    <label class="modal__form__lbl">
+                        Ваше имя
+                        <input class="modal__form__input req" type="text" id="author-input" name="author">
+                    </label>
+                    <label class="modal__form__lbl">
+                        Ваш отзыв
+                        <textarea class="modal__form__input req" type="date" id="review-input" name="date"></textarea>
+                    </label>
+
+                    <button class="btn-link btn-link_pink-hover-light" id="review-submit-btn" type="submit">Отправить</button>
+            </form>
+            <!-- Загрузочный индикатор -->
+            <div id="loader" class="loader" style="display: none;">
+                <img src="path/to/your/loading.gif" alt="Загрузка..."> <!-- Укажите путь к вашему GIF -->
+            </div>
+        </div>
+    </dialog>
 
     <div class="mask">
         <span class="elem-load">
@@ -552,16 +742,16 @@
         </span>
     </div>
 
-
     <!-- JS -->
 
     <script src="./js/script.js"></script>
     <script src="./js/header.js"></script>
     <script src="./js/services.js"></script>
-    <script src="./js/present.js"></script>
     <script src="./js/gallery.js"></script>
     <script src="./js/footer.js"></script>
     <script src="./js/scroll-animation.js"></script>
+    <script src="./js/present-modal.js"></script>
+    <script src="./js/review-modal.js"></script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
