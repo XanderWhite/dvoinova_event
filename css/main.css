@@ -132,6 +132,7 @@ input,
 textarea {
   outline: none;
   padding: 20px 15px;
+  font-family: inherit;
 }
 
 :root {
@@ -1522,9 +1523,6 @@ textarea {
   text-align: center;
   color: #fff;
 }
-.modal__form.sending .loader {
-  display: block;
-}
 .modal__form__lbl {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1663,6 +1661,11 @@ textarea {
 
 /* ============================= */
 /* Media */
+@media (max-width: 585px) {
+  .modal__dialog {
+    padding-top: 55px;
+  }
+}
 @media (max-width: 410px) {
   .modal__form__buttons {
     grid-template-columns: 1fr;
