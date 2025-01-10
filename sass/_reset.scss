@@ -54,6 +54,7 @@ img {
 
 
 dialog[open] {
+	display: flex;
 	outline: none;
 	position: fixed;
 	width: 100%;
@@ -88,3 +89,7 @@ textarea{
 }
 
 
+
+:root {
+    --swiper-navigation-size: initial;
+}

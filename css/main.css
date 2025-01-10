@@ -98,6 +98,9 @@ img {
 }
 
 dialog[open] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   outline: none;
   position: fixed;
   width: 100%;
@@ -131,7 +134,11 @@ textarea {
   padding: 20px 15px;
 }
 
-@-webkit-keyframes anim_pulse {
+:root {
+  --swiper-navigation-size: initial;
+}
+
+@-webkit-keyframes pulse {
   0% {
     scale: 1;
   }
@@ -140,7 +147,7 @@ textarea {
   }
 }
 
-@keyframes anim_pulse {
+@keyframes pulse {
   0% {
     scale: 1;
   }
@@ -148,7 +155,7 @@ textarea {
     scale: 1.1;
   }
 }
-@-webkit-keyframes anim_pulse_small {
+@-webkit-keyframes pulse-small {
   0% {
     scale: 1;
   }
@@ -156,7 +163,7 @@ textarea {
     scale: 1.02;
   }
 }
-@keyframes anim_pulse_small {
+@keyframes pulse-small {
   0% {
     scale: 1;
   }
@@ -164,13 +171,13 @@ textarea {
     scale: 1.02;
   }
 }
-@-webkit-keyframes anim_rotate {
+@-webkit-keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
-@keyframes anim_rotate {
+@keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
@@ -197,8 +204,7 @@ textarea {
 .page__inner {
   overflow: hidden;
   background-color: rgba(142, 106, 214, 0.3);
-  display: grid; /* Используем Grid */
-  grid-template-rows: 1fr auto; /* Заголовок, контент, футер */
+  grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100vh;
 }
 
@@ -230,8 +236,12 @@ textarea {
   font-size: clamp(2rem, 1.773rem + 1.14vw, 2.625rem);
 }
 
+.hide {
+  display: none;
+}
+
 .mask {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -254,14 +264,20 @@ textarea {
   opacity: 1;
   visibility: visible;
 }
-.mask.active .elem-load {
-  -webkit-animation: anim_rotate 1s linear infinite;
-          animation: anim_rotate 1s linear infinite;
+.mask.active .mask__loader {
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
 }
 
-.elem-load {
+.mask__loader {
   width: 50px;
   height: 50px;
+  border-top: 3px solid #e04eb3;
+  border-right: 3px solid #e04eb3;
+  border-radius: 50%;
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
+  margin: 0 auto;
 }
 
 /* ============================= */
@@ -293,8 +309,8 @@ textarea {
       flex-shrink: 0;
 }
 .btn-menu:focus {
-  -webkit-animation: anim_pulse 0.5s infinite both alternate ease-in-out;
-          animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+  -webkit-animation: pulse 0.5s infinite both alternate ease-in-out;
+          animation: pulse 0.5s infinite both alternate ease-in-out;
   outline: none;
 }
 .btn-menu__line {
@@ -348,8 +364,8 @@ textarea {
   font-size: 15px;
 }
 .btn-link:focus {
-  -webkit-animation: anim_pulse_small 0.5s infinite both alternate ease-in-out;
-          animation: anim_pulse_small 0.5s infinite both alternate ease-in-out;
+  -webkit-animation: pulse-small 0.5s infinite both alternate ease-in-out;
+          animation: pulse-small 0.5s infinite both alternate ease-in-out;
   outline: none;
 }
 .btn-link_dark {
@@ -383,8 +399,8 @@ textarea {
 }
 
 #present-showModal-btn {
-  -webkit-animation: anim_pulse 0.5s infinite both alternate ease-in-out;
-          animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+  -webkit-animation: pulse 0.5s infinite both alternate ease-in-out;
+          animation: pulse 0.5s infinite both alternate ease-in-out;
 }
 
 /* ============================= */
@@ -1059,22 +1075,38 @@ textarea {
 .reviews {
   margin-bottom: 20px;
 }
+.reviews__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.swiper-container {
+  overflow: hidden;
+  position: relative;
+}
 
 .reviews__block {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 0 50px;
   padding-top: 30px;
+  margin-bottom: 30px;
 }
 
 .review {
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  justify-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
 }
 .review__title {
   font-family: "HelveticaNeue-Regular", sans-serif;
@@ -1123,16 +1155,89 @@ textarea {
           transform: translateX(-50%) rotate(45deg);
 }
 
+#review-showModal-btn {
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.reviews__swiper-buttons {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 60px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+  background-color: rgba(158, 146, 158, 0.7);
+  border-radius: 50%;
+  inset: 0;
+  -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+/* Стили при наведении и фокусе */
+.swiper-button-next:hover,
+.swiper-button-prev:hover,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+  outline: none;
+  background-color: #e04eb3;
+}
+
+/* Стили при нажатии */
+.swiper-button-next:active,
+.swiper-button-prev:active {
+  -webkit-transform: scale(0.7);
+      -ms-transform: scale(0.7);
+          transform: scale(0.7);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 55.75"%3E%3Cpath fill="white" d="M3.11 55.75c0,0 -0.01,0 -0.01,0 -0.82,0 -1.6,-0.32 -2.18,-0.9 -0.59,-0.58 -0.92,-1.37 -0.92,-2.2 0,-0.82 0.33,-1.61 0.92,-2.2l22.6 -22.57 -22.6 -22.57c-0.59,-0.58 -0.91,-1.38 -0.91,-2.2 0,-1.72 1.39,-3.11 3.11,-3.11 0.82,0 1.61,0.33 2.19,0.91l24.78 24.77c0.58,0.58 0.91,1.38 0.91,2.2 0,0.83 -0.33,1.62 -0.92,2.2l-24.77 24.77c-0.58,0.58 -1.36,0.9 -2.18,0.9 0,0 -0.01,0 -0.01,0l-0.01 0z" /%3E%3C/svg%3E') no-repeat center;
+  position: absolute;
+  left: 18px;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.swiper-button-prev::after {
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+  left: auto;
+  right: 18px;
+}
+
 /* ============================= */
 /* media */
 @media (max-width: 990px) {
-  .reviews__block {
-    grid-template-columns: auto;
-    gap: 20px;
-  }
-  .review {
-    grid-template-rows: auto;
-  }
   .review__text {
     padding: 40px 75px;
   }
@@ -1203,8 +1308,8 @@ textarea {
   outline: none;
 }
 .contacts__link:focus .contacts__icon {
-  -webkit-animation: anim_pulse 0.5s infinite both alternate ease-in-out;
-          animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+  -webkit-animation: pulse 0.5s infinite both alternate ease-in-out;
+          animation: pulse 0.5s infinite both alternate ease-in-out;
 }
 .contacts__icon {
   width: 20px;
@@ -1239,8 +1344,8 @@ textarea {
 }
 .social__link:focus {
   outline: none;
-  -webkit-animation: anim_pulse 0.5s infinite both alternate ease-in-out;
-          animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+  -webkit-animation: pulse 0.5s infinite both alternate ease-in-out;
+          animation: pulse 0.5s infinite both alternate ease-in-out;
 }
 .social__link .fill-color {
   fill: rgb(158, 146, 158);
@@ -1395,20 +1500,15 @@ textarea {
   background-color: transparent;
 }
 
-.modal[open] {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .modal__dialog {
   margin: auto;
   padding: 10px;
   position: relative;
+  max-width: 500px;
+  width: 100%;
 }
 
 .modal__form {
-  max-width: 500px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1422,23 +1522,8 @@ textarea {
   text-align: center;
   color: #fff;
 }
-.modal__form::after {
-  content: "";
-  position: fixed;
-  z-index: 1002;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+.modal__form.sending .loader {
   display: block;
-  background: rgba(51, 51, 51, 0.9);
-  opacity: 0;
-  visibility: hidden;
-}
-.modal__form._sending::after {
-  opacity: 1;
-  visibility: visible;
 }
 .modal__form__lbl {
   display: -webkit-box;
@@ -1455,6 +1540,11 @@ textarea {
   font-size: 12px;
   padding: -10px 0 0;
 }
+.modal__form__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
 .modal__form__input {
   padding: 5px;
   height: 30px;
@@ -1467,6 +1557,10 @@ textarea {
   transition: box-shadow 0.2s linear;
   transition: box-shadow 0.2s linear, -webkit-box-shadow 0.2s linear;
 }
+.modal__form__input_textarea {
+  min-height: 100px;
+  resize: vertical;
+}
 .modal__form__input:hover, .modal__form__input:focus {
   -webkit-box-shadow: 0 0px 15px #afd59c;
           box-shadow: 0 0px 15px #afd59c;
@@ -1475,6 +1569,24 @@ textarea {
 .modal__form__input.error {
   -webkit-box-shadow: 0 7px 15px rgba(250, 53, 18, 0.7);
           box-shadow: 0 7px 15px rgba(250, 53, 18, 0.7);
+}
+
+.modal__title {
+  color: #fff;
+  font-size: clamp(1.438rem, 0.949rem + 2.24vw, 2.625rem);
+}
+
+.file-preview {
+  margin-top: 10px;
+  display: none; /* Скрываем по умолчанию */
+}
+.file-preview img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Делаем круглую миниатюру */
+  -o-object-fit: cover;
+     object-fit: cover; /* Обрезаем изображение */
+  cursor: pointer; /* Курсор в виде указателя */
 }
 
 .present {
@@ -1549,34 +1661,10 @@ textarea {
   border-radius: 50%;
 }
 
-.modal {
-  display: none; /* Скрываем модальное окно по умолчанию */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.loader {
-  text-align: center;
-  margin-top: 20px;
+/* ============================= */
+/* Media */
+@media (max-width: 410px) {
+  .modal__form__buttons {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -1,4 +1,4 @@
-@keyframes anim_pulse {
+@keyframes pulse {
     0%{
         scale: 1;
     }
@@ -7,7 +7,7 @@
     }
 }
 
-@keyframes anim_pulse_small {
+@keyframes pulse-small {
     0%{
         scale: 1;
     }
@@ -16,7 +16,7 @@
     }
 }
 
-@keyframes anim_rotate {
+@keyframes rotate {
      100%{
         transform: rotate(360deg);
     }

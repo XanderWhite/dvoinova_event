@@ -1,9 +1,11 @@
-.page__inner{
+.page__inner {
 	overflow: hidden;
-	background-color: rgba(142, 106, 214,.3);
+	background-color: rgba(142, 106, 214, 0.3);
 
-	display: grid; /* Используем Grid */
-	grid-template-rows:  1fr auto; /* Заголовок, контент, футер */
+	// display: grid; /* Используем Grid */
+
+	// grid-template-rows:  1fr auto; /* Заголовок, контент, футер */
+	grid-template-rows: minmax(0, 1fr) auto;
 	min-height: 100vh;
 }
 
@@ -20,7 +22,7 @@
 	height: 100%;
 }
 
-.main{
+.main {
 	display: flex;
 	flex-direction: column;
 }
@@ -28,38 +30,45 @@
 .title {
 	text-align: center;
 	margin-bottom: 30px;
-font-size: clamp(2rem, 1.773rem + 1.14vw, 2.625rem);
-
+	font-size: clamp(2rem, 1.773rem + 1.14vw, 2.625rem);
 }
 
+.hide {
+	display: none;
+}
 
-.mask{
-	position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height:100vh;
-		opacity: 0;
-		visibility: hidden;
-		display: flex;
-		align-items: center ;
-		justify-content: center;
-z-index: 1000;
-		background: rgba(0, 0, 0, 0.9);
+.mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	opacity: 0;
+	visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.9);
 
-		&.active{
-			opacity: 1;
-			visibility: visible;
+	&.active {
+		opacity: 1;
+		visibility: visible;
 
-			.elem-load{
-				animation: anim_rotate 1s linear infinite;
-					}
-				}
+		& .mask__loader {
+			animation: rotate 1s linear infinite;
 		}
+	}
+}
 
-.elem-load {
+.mask__loader {
 	width: 50px;
 	height: 50px;
+	border-top: 3px solid $color-pink;
+	border-right: 3px solid $color-pink;
+	border-radius: 50%;
+	animation: rotate 1s linear infinite;
+	margin: 0 auto;
 }
 
 /* ============================= */
@@ -74,10 +83,5 @@ z-index: 1000;
 @media (max-width: 990px) {
 	.container {
 		max-width: 700px;
-	}
-}
-@media (max-height: 370px) {
-	.page__inner {
-		// margin-top: $header-height-min;
 	}
 }

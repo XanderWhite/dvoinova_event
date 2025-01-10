@@ -52,7 +52,7 @@
 		}
 
 		&:focus .contacts__icon {
-			animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+			animation: pulse 0.5s infinite both alternate ease-in-out;
 		}
 	}
 
@@ -86,7 +86,7 @@
 		&:focus {
 			outline: none;
 
-			animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+			animation: pulse 0.5s infinite both alternate ease-in-out;
 		}
 
 		& .fill-color {

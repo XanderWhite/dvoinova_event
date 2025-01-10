@@ -10,7 +10,7 @@
 	flex-shrink: 0;
 
 	&:focus {
-		animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+		animation: pulse 0.5s infinite both alternate ease-in-out;
 		outline: none;
 	}
 
@@ -70,7 +70,7 @@
 	font-size: 15px;
 
 	&:focus {
-		animation: anim_pulse_small 0.5s infinite both alternate ease-in-out;
+		animation: pulse-small 0.5s infinite both alternate ease-in-out;
 		outline: none;
 	}
 
@@ -119,7 +119,7 @@
 }
 
 #present-showModal-btn {
-	animation: anim_pulse 0.5s infinite both alternate ease-in-out;
+	animation: pulse 0.5s infinite both alternate ease-in-out;
 }
 
 

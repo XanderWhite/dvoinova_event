@@ -1,27 +1,42 @@
 .reviews {
 	margin-bottom: 20px;
+
+	&__inner{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+
+.swiper-container {
+	overflow: hidden;
+	position: relative;
 }
 
 .reviews__block {
-	display: grid;
-	width: 100%;
-	grid-template-columns: repeat(3, 1fr);
-	justify-content: space-between;
-	gap: 0 50px;
     padding-top: 30px;
-
-}
-.review {
+	margin-bottom: 30px;
 	// display: grid;
-	grid-template-rows: subgrid;
-	grid-row: span 3;
-	justify-items: center;
+	// grid-template-columns: 1fr 1fr 1fr;
+}
+
+.review {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+// display: grid;
+	// grid-template-rows: subgrid;
+	// grid-row: span 3;
+	// justify-items: center;
+	font-size: 12px;
 
 	&__title {
 		font-family: "HelveticaNeue-Regular", sans-serif;
 		font-size: 20px;
 		font-weight: 400;
 	}
+
+
 }
 .reviews-pic {
 	background-color: $color-pink;
@@ -61,28 +76,80 @@ padding: 10px 0 30px;
 	}
 }
 
+#review-showModal-btn{
+	align-self: center;
+}
+
+.reviews__swiper-buttons{
+position: absolute;
+width: 100%;
+top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+    width: 60px;
+    height: 60px;
+    display: flex;
+	position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+	background-color: rgba($color: $color-darkgrey, $alpha: 0.7);
+    border-radius: 50%;
+	inset: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+/* Стили при наведении и фокусе */
+.swiper-button-next:hover,
+.swiper-button-prev:hover,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+	outline: none;
+    background-color: $color-pink;
+}
+
+/* Стили при нажатии */
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    transform: scale(0.7);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+	content: "";
+	background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 55.75"%3E%3Cpath fill="white" d="M3.11 55.75c0,0 -0.01,0 -0.01,0 -0.82,0 -1.6,-0.32 -2.18,-0.9 -0.59,-0.58 -0.92,-1.37 -0.92,-2.2 0,-0.82 0.33,-1.61 0.92,-2.2l22.6 -22.57 -22.6 -22.57c-0.59,-0.58 -0.91,-1.38 -0.91,-2.2 0,-1.72 1.39,-3.11 3.11,-3.11 0.82,0 1.61,0.33 2.19,0.91l24.78 24.77c0.58,0.58 0.91,1.38 0.91,2.2 0,0.83 -0.33,1.62 -0.92,2.2l-24.77 24.77c-0.58,0.58 -1.36,0.9 -2.18,0.9 0,0 -0.01,0 -0.01,0l-0.01 0z" /%3E%3C/svg%3E')
+		no-repeat center;
+	position: absolute;
+	left: 18px;
+	display: block;
+	width: 30px;
+	height: 30px;
+}
+
+.swiper-button-prev::after {
+transform: scaleX(-1);
+left: auto;
+right: 18px;
+}
+
+
 /* ============================= */
 /* media */
 
 @media (max-width: 990px) {
-	.reviews__block {
-		grid-template-columns: auto;
-gap: 20px;
-	}
-
-	.review {
-		grid-template-rows: auto;
-	}
-
-
-
-
-	.review__text {
+		.review__text {
 		padding: 40px 75px;
 	}
 
     .reviews-pic {
-
         margin-top: 0px;
     }
 }
@@ -93,3 +160,5 @@ gap: 20px;
 			padding: 50px;
 	}
 }
+
+
