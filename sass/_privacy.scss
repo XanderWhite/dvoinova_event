@@ -1,0 +1,23 @@
+
+.privacy-policy{
+&__article{
+    margin-bottom: 40px;
+}
+
+    & .title{
+        font-size: 25px;
+    }
+
+
+    & .main-point {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    & .sub-point {
+        margin-left: 20px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}

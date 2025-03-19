@@ -36,12 +36,14 @@ function checkHow() {
 
 //Проверяем высоту блока intro
 function checkIntro() {
-	const rect = introContainer.getBoundingClientRect();
+	if(introContainer){
+		const rect = introContainer.getBoundingClientRect();
 
-	if (rect.top * 1.05 <= window.innerHeight) {
-		introContainer.classList.add("active");
-	} else {
-		introContainer.classList.remove("active");
+		if (rect.top * 1.05 <= window.innerHeight) {
+			introContainer.classList.add("active");
+		} else {
+			introContainer.classList.remove("active");
+		}
 	}
 }
 

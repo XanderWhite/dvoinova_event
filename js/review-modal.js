@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		// Отправляем данные на сервер
-		fetch("../php/modal-review.php", {
+		fetch("../php/modal-review.php", { //fetch(ajax_object.send_review_url, {
 			method: "POST",
 			body: formData, // Отправляем FormData
 		})
@@ -65,11 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
 				alert("Ваш отзыв успешно отправлен!");
 				form.reset();
 				mask.classList.remove("active");
+				document.body.classList.remove("no-scroll");
+
 			})
 			.catch((error) => {
 				console.error("Error:", error);
 				alert("Произошла ошибка при отправке отзыва.");
 				mask.classList.remove("active");
+				document.body.classList.remove("no-scroll");
 			});
 	});
 

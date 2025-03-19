@@ -1,12 +1,11 @@
 .page__inner {
 	overflow: hidden;
-	background-color: rgba(142, 106, 214, 0.3);
+	background-color: $color-bg1;
+	display: flex;
+    flex-direction: column;
+    min-height: var(--element-height);
 
-	// display: grid; /* Используем Grid */
 
-	// grid-template-rows:  1fr auto; /* Заголовок, контент, футер */
-	grid-template-rows: minmax(0, 1fr) auto;
-	min-height: 100vh;
 }
 
 .container {
@@ -23,6 +22,7 @@
 }
 
 .main {
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 }
